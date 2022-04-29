@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navgraph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.rockapp.fragments.LoginFragment"
+        android:label="login_fragment"
+        tools:layout="@layout/login_fragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_bandFragment"
+            app:destination="@id/bandFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bandFragment"
+        android:name="com.example.rockapp.fragments.BandFragment"
+        android:label="band_fragment"
+        tools:layout="@layout/band_fragment" >
+        <argument
+            android:name="user"
+            app:argType="com.example.rockapp.entities.User"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_bandFragment_to_featuresFragment"
+            app:destination="@id/featuresFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/featuresFragment"
+        android:name="com.example.rockapp.fragments.FeaturesFragment"
+        android:label="FeaturesFragment" >
+        <argument
+            android:name="band"
+            app:argType="com.example.rockapp.entities.Band"
+            app:nullable="true" />
+    </fragment>
+</navigation>
