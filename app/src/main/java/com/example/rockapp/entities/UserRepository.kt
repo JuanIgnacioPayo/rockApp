@@ -2,13 +2,20 @@ package com.example.rockapp.entities
 
 class UserRepository {
 
-    var userList : MutableList<User> = mutableListOf()
+    var userList: MutableList<User> = mutableListOf()
 
-    init{
+    init {
 
-        userList.add(User("fer", "123"))
-        userList.add(User("juan", "456"))
-        userList.add(User("ale", "789"))
+        userList.add(User("norberto", "1234"))
+        userList.add(User("mary", "1234"))
+        userList.add(User("lau", "1234"))
+        userList.add(User("fer", "1234"))
+        userList.add(User("evi", "1234"))
+        userList.add(User("guille", "1234"))
+        userList.add(User("noe", "1234"))
+        userList.add(User("dani", "1234"))
+        userList.add(User("esti", "1234"))
+        userList.add(User("juan", "1234"))
 
     }
 }

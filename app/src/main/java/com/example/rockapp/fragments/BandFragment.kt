@@ -6,14 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.webkit.WebBackForwardList
 import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rockapp.R
-import com.example.rockapp.adapter.RockAdapter
-import com.example.rockapp.entities.BandRepository
+import com.example.rockapp.adapter.PersonAdapter
+import com.example.rockapp.entities.PersonRepository
 import com.example.rockapp.entities.User
 import com.example.rockapp.viewmodels.BandViewModel
 
@@ -21,11 +20,11 @@ import com.example.rockapp.viewmodels.BandViewModel
 class BandFragment : Fragment() {
 
     private lateinit var viewModel: BandViewModel
-    lateinit var recyclerBand: RecyclerView
-    lateinit var adapter: RockAdapter
+    lateinit var recyclerPerson: RecyclerView
+    lateinit var adapter: PersonAdapter
     lateinit var v: View
-    var repository : BandRepository = BandRepository()
-    var bandas = repository.bandList
+    var repository : PersonRepository = PersonRepository()
+    var personas = repository.personList
     private lateinit var usuario : User
     private lateinit var nombre : TextView
 
@@ -34,30 +33,30 @@ class BandFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         v = inflater.inflate(R.layout.band_fragment, container, false)
-        recyclerBand = v.findViewById(R.id.recBand)
+        recyclerPerson = v.findViewById(R.id.recBand)
 
         return v
     }
 
     override fun onStart() {
         super.onStart()
-        recyclerBand.setHasFixedSize(true)
-        recyclerBand.layoutManager = LinearLayoutManager(context)
+        recyclerPerson.setHasFixedSize(true)
+        recyclerPerson.layoutManager = LinearLayoutManager(context)
 
         nombre =v.findViewById(R.id.txtUserLogin)
         usuario = BandFragmentArgs.fromBundle(requireArguments()).user!!
         nombre.text = usuario.name
 
 
-        adapter = RockAdapter(bandas) {position ->
+        adapter = PersonAdapter(personas) { position ->
 
-        var action = BandFragmentDirections.actionBandFragmentToFeaturesFragment(bandas[position])
+        var action = BandFragmentDirections.actionBandFragmentToFeaturesFragment(personas[position])
             v.findNavController().navigate(action)
 
 
         }
 
-        recyclerBand.adapter = adapter
+        recyclerPerson.adapter = adapter
 
     }
 

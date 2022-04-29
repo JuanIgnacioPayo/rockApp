@@ -6,11 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.rockapp.R
-import com.example.rockapp.entities.Band
+import com.example.rockapp.entities.Person
 import com.example.rockapp.viewmodels.FeaturesViewModel
 
 @Suppress("DEPRECATION")
@@ -19,11 +18,9 @@ class FeaturesFragment : Fragment() {
     private lateinit var viewModel: FeaturesViewModel
     lateinit var v: View
     private lateinit var name: TextView
-    private lateinit var style: TextView
-    private lateinit var description: TextView
-    private lateinit var members: TextView
+    private lateinit var birthday: TextView
     private lateinit var image: ImageView
-    private lateinit var band : Band
+    private lateinit var person : Person
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,17 +35,13 @@ class FeaturesFragment : Fragment() {
         super.onStart()
 
         name = v.findViewById(R.id.txtName)
-        style = v.findViewById(R.id.txtStyle)
-        members = v.findViewById(R.id.txtMembers)
-        description = v.findViewById(R.id.txtDescription)
+        birthday = v.findViewById(R.id.txtMembers)
         image = v.findViewById(R.id.avatar)
-        band = FeaturesFragmentArgs.fromBundle(requireArguments()).band!!
+        person = FeaturesFragmentArgs.fromBundle(requireArguments()).band!!
 
-        name.text = band.name
-        style.text = band.style
-        members.text = band.members
-        description.text = band.descripcion
-        image.setImageDrawable(v.context.getDrawable(band.image))
+        name.text = person.name
+        birthday.text = person.birthday
+        image.setImageDrawable(v.context.getDrawable(person.image))
 
     }
 

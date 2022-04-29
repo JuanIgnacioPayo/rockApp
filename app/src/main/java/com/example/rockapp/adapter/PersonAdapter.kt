@@ -8,12 +8,12 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rockapp.R
-import com.example.rockapp.entities.Band
+import com.example.rockapp.entities.Person
 
-    class RockAdapter (
-    var bandList: MutableList<Band>,
-    var onClick : (Int)-> Unit)
-        : RecyclerView.Adapter<RockAdapter.BandHolder>() {
+    class PersonAdapter (
+        var personList: MutableList<Person>,
+        var onClick : (Int)-> Unit)
+        : RecyclerView.Adapter<PersonAdapter.BandHolder>() {
 
 
     class BandHolder(v : View) : RecyclerView.ViewHolder(v){
@@ -45,7 +45,7 @@ import com.example.rockapp.entities.Band
     }
 
     override fun onBindViewHolder(holder: BandHolder, position: Int) {
-        var bandas = bandList[position]
+        var bandas = personList[position]
         holder.setName(bandas.name)
         holder.getImageView().setImageDrawable(holder.view.context.getDrawable(bandas.image))
 
@@ -56,6 +56,6 @@ import com.example.rockapp.entities.Band
     }
 
     override fun getItemCount(): Int {
-        return bandList.size
+        return personList.size
     }
 }

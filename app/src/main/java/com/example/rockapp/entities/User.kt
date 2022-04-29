@@ -6,7 +6,6 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 
 class User (
-
     var name : String,
     var password : String
 ) : Parcelable {

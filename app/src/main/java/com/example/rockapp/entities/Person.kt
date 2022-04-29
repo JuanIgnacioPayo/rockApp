@@ -4,14 +4,12 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-class Band (
+class Person (
 
     var name : String,
-    var members: String,
-    var style: String,
-        var descripcion: String,
+    var birthday: String,
     var image : Int,
 
 
-        ) : Parcelable {
+    ) : Parcelable {
 }
