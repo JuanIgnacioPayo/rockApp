@@ -56,7 +56,7 @@ class LoginFragment : Fragment() {
 
             var myUser = search(U_name, U_password)
             if(myUser != null){
-                var action = LoginFragmentDirections.actionLoginFragmentToBandFragment(myUser)
+                var action = LoginFragmentDirections.actionLoginFragmentToPersonFragment(myUser)
                 v.findNavController().navigate(action)
 
             } else {

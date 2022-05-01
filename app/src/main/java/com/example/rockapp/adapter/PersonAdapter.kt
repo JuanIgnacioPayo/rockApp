@@ -13,10 +13,10 @@ import com.example.rockapp.entities.Person
     class PersonAdapter (
         var personList: MutableList<Person>,
         var onClick : (Int)-> Unit)
-        : RecyclerView.Adapter<PersonAdapter.BandHolder>() {
+        : RecyclerView.Adapter<PersonAdapter.PersonHolder>() {
 
 
-    class BandHolder(v : View) : RecyclerView.ViewHolder(v){
+    class PersonHolder(v : View) : RecyclerView.ViewHolder(v){
 
         var view: View
 
@@ -39,15 +39,15 @@ import com.example.rockapp.entities.Person
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BandHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_band, parent, false)
-        return (BandHolder(view))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PersonHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_person, parent, false)
+        return (PersonHolder(view))
     }
 
-    override fun onBindViewHolder(holder: BandHolder, position: Int) {
-        var bandas = personList[position]
-        holder.setName(bandas.name)
-        holder.getImageView().setImageDrawable(holder.view.context.getDrawable(bandas.image))
+    override fun onBindViewHolder(holder: PersonHolder, position: Int) {
+        var personas = personList[position]
+        holder.setName(personas.name)
+        holder.getImageView().setImageDrawable(holder.view.context.getDrawable(personas.image))
 
 
         holder.getCard().setOnClickListener{

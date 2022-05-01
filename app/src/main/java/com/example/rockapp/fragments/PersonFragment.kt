@@ -14,12 +14,12 @@ import com.example.rockapp.R
 import com.example.rockapp.adapter.PersonAdapter
 import com.example.rockapp.entities.PersonRepository
 import com.example.rockapp.entities.User
-import com.example.rockapp.viewmodels.BandViewModel
+import com.example.rockapp.viewmodels.PersonViewModel
 
 @Suppress("DEPRECATION")
-class BandFragment : Fragment() {
+class PersonFragment : Fragment() {
 
-    private lateinit var viewModel: BandViewModel
+    private lateinit var viewModel: PersonViewModel
     lateinit var recyclerPerson: RecyclerView
     lateinit var adapter: PersonAdapter
     lateinit var v: View
@@ -32,8 +32,8 @@ class BandFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        v = inflater.inflate(R.layout.band_fragment, container, false)
-        recyclerPerson = v.findViewById(R.id.recBand)
+        v = inflater.inflate(R.layout.person_fragment, container, false)
+        recyclerPerson = v.findViewById(R.id.recPerson)
 
         return v
     }
@@ -44,13 +44,13 @@ class BandFragment : Fragment() {
         recyclerPerson.layoutManager = LinearLayoutManager(context)
 
         nombre =v.findViewById(R.id.txtUserLogin)
-        usuario = BandFragmentArgs.fromBundle(requireArguments()).user!!
+        usuario = PersonFragmentArgs.fromBundle(requireArguments()).user!!
         nombre.text = usuario.name
 
 
         adapter = PersonAdapter(personas) { position ->
 
-        var action = BandFragmentDirections.actionBandFragmentToFeaturesFragment(personas[position])
+        var action = PersonFragmentDirections.actionPersonFragmentToFeaturesFragment(personas[position])
             v.findNavController().navigate(action)
 
 
@@ -62,7 +62,7 @@ class BandFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(BandViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(PersonViewModel::class.java)
 
     }
 

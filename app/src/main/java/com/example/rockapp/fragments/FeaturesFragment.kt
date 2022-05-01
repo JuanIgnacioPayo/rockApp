@@ -37,7 +37,7 @@ class FeaturesFragment : Fragment() {
         name = v.findViewById(R.id.txtName)
         birthday = v.findViewById(R.id.txtMembers)
         image = v.findViewById(R.id.avatar)
-        person = FeaturesFragmentArgs.fromBundle(requireArguments()).band!!
+        person = FeaturesFragmentArgs.fromBundle(requireArguments()).person!!
 
         name.text = person.name
         birthday.text = person.birthday

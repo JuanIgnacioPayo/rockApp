@@ -11,20 +11,20 @@
         android:label="login_fragment"
         tools:layout="@layout/login_fragment" >
         <action
-            android:id="@+id/action_loginFragment_to_bandFragment"
-            app:destination="@id/bandFragment" />
+            android:id="@+id/action_loginFragment_to_personFragment"
+            app:destination="@id/personFragment" />
     </fragment>
     <fragment
-        android:id="@+id/bandFragment"
-        android:name="com.example.rockapp.fragments.BandFragment"
-        android:label="band_fragment"
-        tools:layout="@layout/band_fragment" >
+        android:id="@+id/personFragment"
+        android:name="com.example.rockapp.fragments.PersonFragment"
+        android:label="person_fragment"
+        tools:layout="@layout/person_fragment">
         <argument
             android:name="user"
             app:argType="com.example.rockapp.entities.User"
             app:nullable="true" />
         <action
-            android:id="@+id/action_bandFragment_to_featuresFragment"
+            android:id="@+id/action_personFragment_to_featuresFragment"
             app:destination="@id/featuresFragment" />
     </fragment>
     <fragment
@@ -32,7 +32,7 @@
         android:name="com.example.rockapp.fragments.FeaturesFragment"
         android:label="FeaturesFragment" >
         <argument
-            android:name="band"
+            android:name="person"
             app:argType="com.example.rockapp.entities.Band"
             app:nullable="true" />
     </fragment>

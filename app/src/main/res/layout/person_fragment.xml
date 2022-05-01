@@ -5,10 +5,10 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.BandFragment">
+    tools:context=".fragments.PersonFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recBand"
+        android:id="@+id/recPerson"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="100dp"
@@ -23,7 +23,7 @@
         android:layout_height="37dp"
         android:text="Welcome"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/recBand"
+        app:layout_constraintBottom_toTopOf="@+id/recPerson"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.169"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,7 +36,7 @@
         android:layout_height="37dp"
         android:text="User Name"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/recBand"
+        app:layout_constraintBottom_toTopOf="@+id/recPerson"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.539"
         app:layout_constraintStart_toEndOf="@+id/textView"
